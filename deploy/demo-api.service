@@ -1,0 +1,17 @@
+[Unit]
+Description=Demo .NET API
+After=network.target
+
+[Service]
+WorkingDirectory=/opt/demo-api
+ExecStart=/usr/bin/dotnet /opt/demo-api/Demo.Api.dll
+Restart=always
+RestartSec=5
+User=ubuntu
+Environment=ASPNETCORE_ENVIRONMENT=Production
+Environment=ASPNETCORE_URLS=http://localhost:5000
+# Your Cloudflare Pages address. Add more with AllowedOrigins__1=...
+Environment=AllowedOrigins__0=https://your-project.pages.dev
+
+[Install]
+WantedBy=multi-user.target

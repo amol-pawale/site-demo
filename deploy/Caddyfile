@@ -1,0 +1,4 @@
+# Replace with your DuckDNS (or own) hostname. Caddy gets the HTTPS certificate automatically.
+your-name.duckdns.org {
+    reverse_proxy localhost:5000
+}
